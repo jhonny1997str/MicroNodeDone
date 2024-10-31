@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  users:
+    build:
+      context: ./microservice-users
+    ports:
+      - "3001:3001"
+    environment:
+      - DATABASE_URL=postgres://postgres:solocali123#@postgres:5432/nodeuser_db
+    networks:
+      - microservice-network
+
+  products:
+    build:
+      context: ./microservice-products
+    ports:
+      - "3002:3002"
+    environment:
+      - DATABASE_URL=postgres://postgres:solocali123#@postgres:5432/nodeproducts_db
+    networks:
+      - microservice-network
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: solocali123#
+      POSTGRES_DB: nodeproducts_db
+    networks:
+      - microservice-network
+
+networks:
+  microservice-network:
+    driver: bridge
