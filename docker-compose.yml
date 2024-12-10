@@ -7,7 +7,7 @@ services:
     ports:
       - "3001:3001"
     environment:
-      - DATABASE_URL=postgres://postgres:solocali123#@postgres:5432/nodeuser_db
+      - DATABASE_URL=postgres://postgres:admin#@postgres:5432/nodeuser_db
     networks:
       - microservice-network
 
@@ -17,7 +17,7 @@ services:
     ports:
       - "3002:3002"
     environment:
-      - DATABASE_URL=postgres://postgres:solocali123#@postgres:5432/nodeproducts_db
+      - DATABASE_URL=postgres://postgres:admin#@postgres:5432/nodeproducts_db
     networks:
       - microservice-network
 
@@ -25,7 +25,7 @@ services:
     image: postgres
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: solocali123#
+      POSTGRES_PASSWORD: admin
       POSTGRES_DB: nodeproducts_db
     networks:
       - microservice-network

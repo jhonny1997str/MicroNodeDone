@@ -1,5 +1,5 @@
 const { Sequelize } = require('sequelize');
-// Carga las variables de entorno
+
 require('dotenv').config();
 
 const sequelize = new Sequelize(
@@ -8,9 +8,9 @@ const sequelize = new Sequelize(
   process.env.DB_PASSWORD,
   {
     host: process.env.DB_HOST,
-    dialect: 'postgres', // Asegúrate de usar el dialecto correcto
+    dialect: 'postgres', 
   }
 );
 
-// Exporta la conexión a la base de datos
+
 module.exports = sequelize;

@@ -1,7 +1,7 @@
 const express = require('express');
 const {
   getAllProducts,
-  getProductsByUserId, // Cambiado el nombre del método
+  getProductsByUserId, 
   getProductById,
   saveProduct,
   updateProduct,
@@ -12,7 +12,7 @@ const router = express.Router();
 
 // Defino los métodos
 router.get('/products', getAllProducts);
-router.get('/products-users/:id', getProductsByUserId); // Cambiado el nombre de la ruta
+router.get('/products-users/:id', getProductsByUserId); 
 router.get('/products/:id', getProductById);
 router.post('/products', saveProduct);
 router.put('/products/:id', updateProduct);
